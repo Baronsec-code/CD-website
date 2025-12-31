@@ -1,15 +1,14 @@
 function sendAI() {
   const text = document.getElementById("userInput").value;
-  const encodedText = encodeURIComponent(text);
+  const encoded = encodeURIComponent(text);
 
-  fetch(`https://cristopher-subcordiform-lacey.ngrok-free.dev/api/ai?text=${encodedText}`)
-    .then(res => res.json())
+  fetch(`https://cristopher-subcordiform-lacey.ngrok-free.dev/api/ai?text=${encoded}`)
+    .then(response => response.json())
     .then(data => {
       document.getElementById("output").innerText = data.reply;
     })
-    .catch(err => {
-      console.error(err);
+    .catch(error => {
+      console.error(error);
       document.getElementById("output").innerText = "AI error";
     });
 }
- 
