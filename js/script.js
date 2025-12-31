@@ -1,7 +1,7 @@
-function sendText() {
+function sendAI() {
   const text = document.getElementById("userInput").value;
 
-  fetch("https://cristopher-subcordiform-lacey.ngrok-free.dev/api/echo", {
+  fetch("https://cristopher-subcordiform-lacey.ngrok-free.dev/api/ai", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -14,7 +14,7 @@ function sendText() {
     })
     .catch(error => {
       document.getElementById("output").innerText =
-        "Error talking to Python";
+        "AI error";
       console.error(error);
     });
 }
