@@ -1,13 +1,8 @@
 function sendAI() {
   const text = document.getElementById("userInput").value;
+  const encodedText = encodeURIComponent(text);
 
-  fetch("https://NEW-NGROK-URL.ngrok-free.dev/api/ai", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ text })
-  })
+  fetch(`https://cristopher-subcordiform-lacey.ngrok-free.dev/api/ai?text=${encodedText}`)
     .then(res => res.json())
     .then(data => {
       document.getElementById("output").innerText = data.reply;
@@ -17,3 +12,4 @@ function sendAI() {
       document.getElementById("output").innerText = "AI error";
     });
 }
+ 
