@@ -1,7 +1,7 @@
 function sendText() {
   const text = document.getElementById("userInput").value;
 
-  fetch("https://cristopher-subcordiform-lacey.ngrok-free.dev", {
+  fetch("https://cristopher-subcordiform-lacey.ngrok-free.dev/api/echo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
